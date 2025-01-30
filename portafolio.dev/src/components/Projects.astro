@@ -1,0 +1,63 @@
+---
+import Angular from "./icons/Angular.astro"
+import MongoDB from "./icons/MongoDB.astro"
+import SpringBoot from "./icons/SpringBoot.astro"
+import NodeJS from "./icons/NodeJS.astro"
+
+const TAGS = {
+  ANGULAR: {
+    name: "Angular",
+    class: "bg-black text-white",
+    icon: Angular,
+  },
+  SPRINGBOOT: {
+    name: "SpringBoot",
+    class: "bg-black text-white",
+    icon: SpringBoot,
+  },
+  MONGODB: {
+    name: "MongoDB",
+    class: "bg-black text-white",
+    icon: MongoDB,
+  },
+  NODEJS: {
+    name: "NodeJS",
+    class: "bg-black text-white",
+    icon: NodeJS,
+  }
+
+}
+
+const PROJECTS = [
+  {
+    title: 'Exam Platform Cloud',
+    description: 'Plataforma Web especializada en la creacion de examenes y asignacion a estudiantes atraves de su correo electronico, desde una consola centralizada para la gestion y consulta de Examenes, Usuarios e Informes de resultados de una Institucion Educativa que mantenga la modalidad de educacion virtual o a distancia. ',
+    link: '#',
+    gitHub: '#',
+    image: '/public/project1.webp',
+    tags: [TAGS.ANGULAR, TAGS.SPRINGBOOT, TAGS.MONGODB, TAGS.NODEJS]
+  }
+]
+---
+
+{
+  PROJECTS.map(({title, description, tags, image}) => (
+    <article>
+      <h3 class="text-2xl font-semibold text-yellow-200 mb-2">{ title }</h3>
+      <p class="text-lg mb-4 text-pretty">{ description }</p>
+      <ul class="flex gap-x-4 flex-row mb-2">
+        { tags.map(tag => (
+          <li>
+            <span class={`flex gap-x-2 rounded-full text-xs ${tag.class}  py-1 px-2`}>
+              { typeof tag === 'object' && tag.icon && <tag.icon class="size-4" /> }
+              { tag.name } 
+            </span>
+            
+            { typeof tag === 'string' && <span>{ tag }</span> }
+          </li>
+        )) }
+      </ul>
+      <img class="rounded shadow-2xl shadow-white/10" src={image} alt={`Captura de pantalla del proyecto ${image}`}>
+    </article>
+  ))
+}

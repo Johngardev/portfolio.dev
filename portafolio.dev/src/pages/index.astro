@@ -1,0 +1,67 @@
+---
+import Badge from "../components/Badge.astro";
+import Layout from "../layout/Layout.astro";
+import LinkedInIcon from "../components/icons/LinkedIn.astro";
+import SocialPill from "../components/SocialPills.astro";
+import GitHubIcon from "../components/icons/GitHub.astro";
+import EmailIcon from "../components/icons/Email.astro";
+import Experience from "../components/Experience.astro";
+import SectionContainer from "../components/SectionContainer.astro";
+import Briefcase from "../components/icons/Briefcase.astro";
+import Assembly from "../components/icons/Assembly.astro";
+import Projects from "../components/Projects.astro";
+---
+
+<Layout
+  title="Portfolio de Johngardev - Desarrollador y Programador Web con 2 años de experiencia"
+>
+  <main class="px-4">
+    <SectionContainer class="py-44 pb-24">
+      <img
+        class="rounded-full size-24 mb-8"
+        src="public/Jhon20242.png"
+        alt="johngardev photo"
+      />
+      <h1 class="text-white text-3xl md:text-4xl lg:text-5xl font-bold flex flex-row gap-x-4 pb-4">
+        Hola, Soy Johngardev <a
+          href="https://www.linkedin.com/in/john-garcia-157156206/"
+          target="_blank"
+          rel="noopener"
+          class="flex justify-center items-center"
+          ><Badge>Disponible para trabajar</Badge></a>
+      </h1>
+      <h2 class="text-xl lg:text-2xl opacity-80 text-wrap max-w-[700px]">
+        4 años de experiencia como Soporte TI & 2 años como Desarrollador Web de
+        Pereira, Colombia. Especializado en asesorias de TI y el desarrollo
+        de soluciones unicas de software.
+      </h2>
+      <nav class="flex gap-4 mt-8 flex-wrap">
+        <SocialPill href="https://www.linkedin.com/in/john-garcia-157156206/">
+          <LinkedInIcon class="size-4 md:size-6" />
+          LinkedIn
+        </SocialPill>
+        <SocialPill href="https://github.com/Johngardev">
+          <GitHubIcon class="size-4 md:size-6" />
+          GitHub
+        </SocialPill>
+        <SocialPill href="https://github.com/Johngardev">
+          <EmailIcon class="size-4 md:size-6" />
+          johngarlo@icloud.com
+        </SocialPill>
+      </nav>
+    </SectionContainer>
+    <SectionContainer id="experience">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <Briefcase class="size-7" />
+        Experiencia laboral</h2>
+      <Experience />
+    </SectionContainer>
+    <SectionContainer id="projects">
+      <h2 class="text-3xl font-semibold mb-6 flex gap-x-2 items-center">
+        <Assembly class="size-7" />
+        Proyectos
+      </h2>
+      <Projects />
+    </SectionContainer>
+  </main>
+</Layout>

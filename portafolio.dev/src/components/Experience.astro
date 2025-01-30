@@ -1,0 +1,26 @@
+---
+import ExperienceItem from "./ExperienceItem.astro"
+
+const EXPERIENCE = [
+  {
+    date: 'Actualmente...',
+    title: 'Especialista de Soporte TI - Microtrón SAS',
+    description: 'Principal responsable del soporte de primer nivel a los diferentes clientes que han implementado alguna de las soluciones distribuidas por la compañia de la mano de grandes fabricantes como Adobe, Autodesk, Microsoft, Kaspersky, entre otros.'
+  },
+  {
+    date: 'Actualmente...',
+    title: 'Sales Manager - Microtrón SAS',
+    description: 'description 2'
+  }
+]
+---
+
+<ol class="relative mt-14">
+  {
+    EXPERIENCE.map(experience => (
+      <li class="mb-10 ms-4">
+        <ExperienceItem {...experience} />
+      </li>
+    ))
+  }
+</ol>
